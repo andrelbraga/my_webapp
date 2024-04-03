@@ -1,0 +1,11 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home4/bragai22/bragaservices.com
+    - /bin/cp bin $DEPLOYPATH/app/bin/
+    - /bin/cp config $DEPLOYPATH/app/config
+    - /bin/cp src $DEPLOYPATH/app/src/
+    - /bin/cp vendor $DEPLOYPATH/app/vendor/
+    - /bin/cp composer.json $DEPLOYPATH/app/
+    - /bin/cp public/index.php $DEPLOYPATH/public_html/
+    - /bin/cp public/.htaccess $DEPLOYPATH/public_html/
