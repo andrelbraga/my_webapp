@@ -1,11 +1,16 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home4/bragai22/bragaservices.com
-    - /bin/cp bin $DEPLOYPATH/app/bin/
-    - /bin/cp config $DEPLOYPATH/app/config
-    - /bin/cp src $DEPLOYPATH/app/src/
-    - /bin/cp vendor $DEPLOYPATH/app/vendor/
-    - /bin/cp composer.json $DEPLOYPATH/app/
-    - /bin/cp public/index.php $DEPLOYPATH/public_html/
-    - /bin/cp public/.htaccess $DEPLOYPATH/public_html/
+    - export DEPLOYPATH=/home4/bragai22/bragaservices.com/
+    - /bin/cp -R bin $DEPLOYPATH
+    - /bin/cp -R config $DEPLOYPATH
+    - /bin/cp -R src $DEPLOYPATH
+    - /bin/cp .env $DEPLOYPATH
+    - /bin/cp composer.json $DEPLOYPATH
+    - /bin/cp public/index_hostgator.php $DEPLOYPATH
+    - /bin/cp public/.htaccess $DEPLOYPATH
+    - /opt/cpanel/composer/bin/composer install
+    - /bin/cp -R vendor $DEPLOYPATH
+    - /bin/cp -R var $DEPLOYPATH
+    - /bin/mv -f $DEPLOYPATH/index_hostgator.php $DEPLOYPATH/index.php
+
